@@ -2,13 +2,15 @@
 
 ## Overview
 This system is designed to detect various cheating methods in online programming contests. It runs on the candidate's Windows PC and monitors for:
-1.  **Virtual Machines (VMs)**: Detects if the OS is running inside a VM (VirtualBox, VMware, QEMU, Hyper-V).
+1. **Virtual Machines (VMs)**  
+   - Detects if the OS is running inside a VM (VirtualBox, VMware, QEMU, etc.).  
+   - Detects if any virtual machines are running **on the host OS**, even when the anti-cheat program itself is executed on the host.
 2.  **Remote Access Tools (RATs)**: Detects active remote desktop sessions and remote control software (TeamViewer, AnyDesk, etc.).
 3.  **Screen Sharing & Recording**: Detects screen sharing applications (Discord, Zoom, OBS) and suspicious overlay windows.
 4.  **Device & System Anomalies**: Detects multiple monitors, virtual display adapters, external/virtual webcams, and suspicious mouse behavior (botting).
 
 ## Architecture
-The system is modular, consisting of four specialized detection engines orchestrated by a main loop. It is designed for cross-platform compatibility (Windows and Linux).
+The system is modular, enabling a plug and play design to add/remove modules and components. It consists of four specialized detection engines orchestrated by a main loop. It is designed for cross-platform compatibility (Windows and Linux).
 
 **Source Code Location**:
 -   `src/common/`: Platform-independent logic (`main.cpp`, `utils.cpp`).
