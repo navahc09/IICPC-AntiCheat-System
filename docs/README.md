@@ -76,4 +76,4 @@ The system will:
 -   **Passive Threat**: Checks for installed but currently inactive cheat software (e.g., VirtualBox installed in `C:\Program Files`) or static indicators like MAC Address.
 
 ## Disclaimer
-This tool is for educational and hackathon purposes. Some heuristic checks (like mouse velocity) may require calibration for specific hardware.
+This tool is for educational and hackathon purposes. Some heuristic checks (like mouse velocity, and RDTSC timing) may require calibration for specific hardware.
