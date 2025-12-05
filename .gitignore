@@ -42,10 +42,6 @@ IICPC
 #   VS CODE
 # ==============================
 .vscode/*
-# Keep essential VS Code configuration
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
 
 # ==============================
 #   LOGS
