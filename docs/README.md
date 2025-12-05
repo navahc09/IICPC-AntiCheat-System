@@ -76,5 +76,15 @@ The system will:
 -   **Active Threat (Soft Check)**: Heuristic checks that indicate suspicious behavior (e.g., High mouse velocity, unknown overlay windows).
 -   **Passive Threat**: Checks for installed but currently inactive cheat software (e.g., VirtualBox installed in `C:\Program Files`) or static indicators like MAC Address.
 
+## Screenshots
+
+1. Windows: System appears clean
+   
+   <img width="1832" height="910" alt="image" src="https://github.com/user-attachments/assets/cbcba5ef-e2d8-4432-8cee-3dd2dcd32743" />
+
+2. Linux (Ubuntu): VM Detected! (multiple flags)
+
+   <img width="1920" height="1014" alt="Screenshot from 2025-12-05 12-39-06" src="https://github.com/user-attachments/assets/7c32f075-1fdd-4ad9-9835-0897a058c22d" />
+
 ## Disclaimer
 This tool is for educational and hackathon purposes. Some heuristic checks (like mouse velocity, and RDTSC timing) may require calibration for specific hardware.
