@@ -9,29 +9,33 @@
 #include <chrono>
 #include <thread>
 
-// Internal state structure (PIMPL) or just static globals/members if not strictly pure
-// Since the header only exposes methods, we need to maintain state. 
-// The original code had members `lastPos`, `lastTime`, `firstReading`.
-// We can include them in the .cpp file via a static/global approach OR careful usage since we are implementing a class.
-// But the class definition is in the header! The header I wrote didn't have private members.
-// This is a common issue when "headerizing".
-// The Header defined:
-/*
-class DeviceDetector {
-public:
-    void runPassiveChecks(...);
-    void runActiveChecks(...);
-};
-*/
-// It did NOT define the private members. This means I cannot simple use `this->lastPos`.
-// I must use `static` variables inside the function or file scope variables, or change the header.
-// Changing the header is safer, but I want to keep headers clean.
-// Given `DeviceDetector` is instantiated once in `main`, static function variables are simplest and sufficient.
-
 bool checkMultiMonitor()
 {
-    int monitors = GetSystemMetrics(SM_CMONITORS);
-    return (monitors > 1);
+    int monitorCount = 0;
+    DISPLAY_DEVICEA adapter;
+    adapter.cb = sizeof(adapter);
+    DWORD adapterIdx = 0;
+
+    // Iterate over all display adapters
+    while (EnumDisplayDevicesA(NULL, adapterIdx++, &adapter, 0))
+    {
+        if (adapter.StateFlags & DISPLAY_DEVICE_ATTACHED_TO_DESKTOP)
+        {
+            DISPLAY_DEVICEA monitor;
+            monitor.cb = sizeof(monitor);
+            DWORD monitorIdx = 0;
+
+            // Iterate over monitors for this adapter
+            while (EnumDisplayDevicesA(adapter.DeviceName, monitorIdx++, &monitor, 0))
+            {
+                if (monitor.StateFlags & DISPLAY_DEVICE_ATTACHED_TO_DESKTOP)
+                {
+                    monitorCount++;
+                }
+            }
+        }
+    }
+    return (monitorCount > 1);
 }
 
 bool checkVirtualMonitors(std::vector<std::string> &active_soft, int& confidence_score)
