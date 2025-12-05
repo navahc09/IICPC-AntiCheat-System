@@ -1,0 +1,76 @@
+# ==============================
+#   OS-SPECIFIC JUNK FILES
+# ==============================
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+
+# ==============================
+#   COMPILER OUTPUT
+# ==============================
+# Windows and Linux object files
+*.o
+*.obj
+
+# Static / shared libs
+*.a
+*.lib
+*.so
+*.dll
+*.dylib
+
+# Precompiled headers
+*.pch
+*.gch
+
+# ==============================
+#   EXECUTABLES
+# ==============================
+# Ignore all executables globally
+*.exe
+*.out
+*.elf
+*.app
+a.out
+IICPC
+
+# BUT keep the binaries you intentionally place in bin/
+!bin/windows/*.exe
+!bin/linux/IICPC
+
+# ==============================
+#   VS CODE
+# ==============================
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# ==============================
+#   LOGS
+# ==============================
+*.log
+
+# ==============================
+#   TEMPORARY FILES
+# ==============================
+*.tmp
+*.temp
+
+# ==============================
+#   MINGW SPECIFIC (Windows)
+# ==============================
+*.stackdump
+
+# ==============================
+#   GDB / LLDB
+# ==============================
+*.gdb
+*.dSYM/
