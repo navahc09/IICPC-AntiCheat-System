@@ -1,16 +1,9 @@
-# ==============================
-#   OS-SPECIFIC JUNK FILES
-# ==============================
-# macOS
-.DS_Store
-
 # Windows
 Thumbs.db
 Desktop.ini
 
 # Linux
 *~
-
 
 # ==============================
 #   COMPILER OUTPUT
@@ -49,6 +42,7 @@ IICPC
 #   VS CODE
 # ==============================
 .vscode/*
+# Keep essential VS Code configuration
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
