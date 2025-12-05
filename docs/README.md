@@ -38,17 +38,16 @@ The system is built using simple `g++` commands. No complex build system (Make/C
 ### Build Commands
 
 #### Windows (MinGW-w64)
-Run this command from the project root (`IICPC/`):
+Double-click `compile_windows.bat` or run:
 ```cmd
-mkdir bin\windows 2>NUL
-g++ -o bin/windows/main.exe src/common/*.cpp src/windows/*.cpp -I include -lws2_32 -liphlpapi -lwtsapi32 -luser32 -lgdi32 -static
+.\compile_windows.bat
 ```
 
 #### Linux (Ubuntu/Debian)
-Run this command from the project root (`IICPC/`):
+Run the script:
 ```bash
-mkdir -p bin/linux
-g++ -o bin/linux/main src/common/*.cpp src/linux/*.cpp -I include -pthread
+chmod +x compile_linux.sh
+./compile_linux.sh
 ```
 
 The compiled binaries will be placed in `bin/windows/` or `bin/linux/` respectively.
