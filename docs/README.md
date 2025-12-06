@@ -42,6 +42,11 @@ Double-click `compile_windows.bat` or run:
 ```cmd
 .\compile_windows.bat
 ```
+or run the following command:
+```cmd
+mkdir "bin\windows"
+g++ -o bin\windows\main.exe src\common\*.cpp src\windows\*.cpp -I include -lws2_32 -liphlpapi -lwtsapi32 -luser32 -lgdi32 -static
+```
 
 #### Linux (Ubuntu/Debian)
 Run the script:
@@ -49,8 +54,13 @@ Run the script:
 chmod +x compile_linux.sh
 ./compile_linux.sh
 ```
+or run the following commands:
+```bash
+mkdir -p bin/linux
+g++ -o bin/linux/main src/common/*.cpp src/linux/*.cpp -I include -pthread
+```
 
-The compiled binaries will be placed in `bin/windows/` or `bin/linux/` respectively.
+The compiled binaries will be placed in the `bin/windows/` or `bin/linux/` directories, respectively. Both main executables are already included there in case compilation doesn’t work.
 
 ## Usage
 Run the generated executable as Administrator (Windows) or Root (Linux) for full functionality:
