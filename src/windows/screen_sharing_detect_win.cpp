@@ -115,6 +115,7 @@ void checkWindows(std::vector<std::string> &active_hard, std::vector<std::string
             }
         }
 
+        // Suspicious Overlay, giving user the benefit of the doubt and not marking it as hard. Can be calibrated later
         if (containsString(sTitle, "Stop Sharing") || 
             containsString(sTitle, "is sharing your screen") ||
             containsString(sTitle, "Stop recording")) {

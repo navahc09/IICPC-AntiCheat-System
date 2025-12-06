@@ -180,7 +180,7 @@ int checkRDTSCTiming()
     double variance = variance_sum / deltas.size();
     double std_dev = std::sqrt(variance);
 
-    if (average > 7000)
+    if (average > 8000)
     {
         return 2;
     }
